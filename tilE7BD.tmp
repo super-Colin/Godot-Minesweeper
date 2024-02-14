@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxs0dsokqhn4u"]
+
+[ext_resource type="Script" path="res://tile.gd" id="1_7jcow"]
+[ext_resource type="Texture2D" uid="uid://c2ftor1tugh2x" path="res://dice_empty.png" id="1_mvylm"]
+[ext_resource type="Texture2D" uid="uid://c75787secf85q" path="res://skull.png" id="3_7vsjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwm2p"]
+size = Vector2(100, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vmrf"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0.847059, 0.215686, 0.188235, 1)
+
+[node name="Tile" type="Area2D"]
+script = ExtResource("1_7jcow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cwm2p")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("1_mvylm")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -27.5
+offset_right = 11.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_5vmrf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bomb" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.156863, 0.156863, 0.156863, 1)
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(1.3916, 1.3916)
+texture = ExtResource("3_7vsjj")
